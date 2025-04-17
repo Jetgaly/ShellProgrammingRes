@@ -503,3 +503,21 @@ crontab -u username -e
 50 7 * * * /sbin/service sshd start  意思是每天7：50开启ssh服务 
 ```
 
+文本切割
+
+cut，awk，
+
+```bash
+awk options '/pattern/ {action}' filename
+
+#默认分割符为空格
+#-F 指定分割符
+#-f <脚本文件>： 指定一个包含 awk 脚本的文件。这样可以在文件中编写较大的 awk 脚本，然后通过 -f 选项将其加载
+```
+
+
+
+```bash
+cat /etc/passwd | awk -F ":" '/^root/ {print $7}'
+```
+
